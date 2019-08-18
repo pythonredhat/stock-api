@@ -1,4 +1,4 @@
-# puppy-api setup
+# stock-api setup
 
 ### Dev environment setup:
 ```bash
