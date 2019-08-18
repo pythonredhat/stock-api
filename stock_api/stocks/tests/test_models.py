@@ -16,6 +16,5 @@ class StockTest(TestCase):
         self.assertEqual(
             stock_visa.get_stock_value(), "Visa is worth 399306000000")
         self.assertEqual(
-            stock_mastercard.get_stock_value(), 
-        )
+            stock_mastercard.get_stock_value(), "Mastercard is worth 278355000000")
          
