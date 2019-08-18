@@ -13,8 +13,8 @@ class Stock(models.Model):
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def get_stock(self):
-        return self.name + ' is worth ' + self.market_cap
+    def get_stock_value(self):
+        return self.name + ' is worth ' + str(self.market_cap)
     
     def __repr__(self):
         return self.name + ' is added.'
