@@ -1,0 +1,3 @@
+*.pyc
+stock_api/stocks/__pycache__
+stock_api/stock_api/__pycache__
