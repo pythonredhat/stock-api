@@ -20,7 +20,6 @@ class GetAllStocksTest(TestCase):
             name="Apple", ticker="AAPL", market_cap=950000000000, eps=11.78)
         Stock.objects.create(
             name="Verizon", ticker="VZ", market_cap=232719000000, eps=3.83)
-        )
     
     def test_get_all_stocks(self):
         #get API response
