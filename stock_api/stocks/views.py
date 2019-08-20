@@ -32,4 +32,3 @@ def get_post_stocks(request):
     elif request.method == 'POST':
         return Response({})
 
-        
