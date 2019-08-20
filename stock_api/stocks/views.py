@@ -27,7 +27,9 @@ def get_delete_update_stock(request, pk):
 def get_post_stocks(request):
     #get all stocks
     if request.method == 'GET':
-        return Response({})
+        stocks = Stock.objects.all()
+        serializer = StockSerializer(stocks, many=True)
+        return Response(serializer.data)
     #insert a new record for a stock
     elif request.method == 'POST':
         return Response({})
