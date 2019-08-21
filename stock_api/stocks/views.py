@@ -15,7 +15,8 @@ def get_delete_update_stock(request, pk):
 
     #get details of a single stock
     if request.method == 'GET':
-        return Response({})
+        serializer = StockSerializer(stock)
+        return Response(serializer.data)
     #delete a single stock
     elif request.method == 'DELETE':
         return Response({})
