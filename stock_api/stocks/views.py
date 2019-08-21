@@ -32,12 +32,12 @@ def get_post_stocks(request):
         serializer = StockSerializer(stocks, many=True)
         return Response(serializer.data)
     #insert a new record for a stock
-    elif request.method == 'POST':
+    if request.method == 'POST':
         data = {
             'name': request.data.get('name'),
             'ticker': request.data.get('ticker'),
-            'market_cap': int(request.get('market_cap')),
-            'eps': float(request.get('eps'))
+            'market_cap': int(request.data.get('market_cap')),
+            'eps': float(request.data.get('eps'))
         }
         serializer = StockSerializer(data=data)
         if serializer.is_valid():
