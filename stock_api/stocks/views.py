@@ -33,5 +33,15 @@ def get_post_stocks(request):
         return Response(serializer.data)
     #insert a new record for a stock
     elif request.method == 'POST':
-        return Response({})
+        data = {
+            'name': request.data.get('name'),
+            'ticker': request.data.get('ticker'),
+            'market_cap': int(request.get('market_cap')),
+            'eps': float(request.get('eps'))
+        }
+        serializer = StockSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
