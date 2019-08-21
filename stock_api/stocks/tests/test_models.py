@@ -1,8 +1,9 @@
 from django.test import TestCase
 from ..models import Stock
 
+
 class StockTest(TestCase):
-    """ Test module for Stock model"""
+    """ Test module for Stock model """
 
     def setUp(self):
         Stock.objects.create(
@@ -17,4 +18,3 @@ class StockTest(TestCase):
             stock_visa.get_stock_value(), "Visa is worth 399306000000")
         self.assertEqual(
             stock_mastercard.get_stock_value(), "Mastercard is worth 278355000000")
-         
