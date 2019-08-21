@@ -5,11 +5,12 @@ from django.urls import reverse
 from ..models import Stock
 from ..serializers import StockSerializer
 
+
 #initiate the APIClient app
 client = Client()
 
 class GetAllStocksTest(TestCase):
-    """ Test module for GET all stocks API """
+    """ Test module for GET all stocks API  """
 
     def setUp(self):
         Stock.objects.create(
@@ -30,5 +31,5 @@ class GetAllStocksTest(TestCase):
         self.assertEqual(response.data, serializer.data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        
+    
 

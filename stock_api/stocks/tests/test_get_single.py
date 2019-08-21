@@ -8,7 +8,7 @@ from ..serializers import StockSerializer
 #initiate the APIClient app
 client = Client()
 
-class GetSingleStockTest():
+class GetSingleStockTest(TestCase):
     """ Test module for GET single stock API """
     
     def setUp(self):
