@@ -28,7 +28,8 @@ def get_delete_update_stock(request, pk):
     
     #delete a single stock
     elif request.method == 'DELETE':
-        return Response({})
+        stock.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET', 'POST'])
 def get_post_stocks(request):
