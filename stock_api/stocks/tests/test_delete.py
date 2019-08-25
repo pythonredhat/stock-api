@@ -20,7 +20,7 @@ class DeleteSingleStockTest(TestCase):
 
     def test_valid_delete_stock(self):
         response = client.delete(
-            reverse('get_delete_update_puppy', kwargs={'pk': self.amazon.pk}))
+            reverse('get_delete_update_stock', kwargs={'pk': self.amazon.pk}))
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
     def test_invalid_delete_puppy(self):
