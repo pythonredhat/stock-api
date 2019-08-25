@@ -17,11 +17,17 @@ def get_delete_update_stock(request, pk):
     if request.method == 'GET':
         serializer = StockSerializer(stock)
         return Response(serializer.data)
+    
+    #update details of a single stock
+    if request.method == 'PUT':
+        serializer = StockSerializer(stock, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
     #delete a single stock
     elif request.method == 'DELETE':
-        return Response({})
-    #update details of a single stock
-    elif request.method == 'PUT':
         return Response({})
 
 @api_view(['GET', 'POST'])
