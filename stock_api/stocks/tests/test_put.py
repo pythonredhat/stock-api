@@ -22,7 +22,7 @@ class UpdateSingleStockTest(TestCase):
             'market_cap': 891063000000,
             'eps': 24.10
         }
-           self.invalid_payload = {
+        self.invalid_payload = {
             'name': '',
             'ticker': 'AMZN',
             'market_cap': 89106384718903,
